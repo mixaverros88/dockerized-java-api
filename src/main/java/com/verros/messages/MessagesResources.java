@@ -5,6 +5,7 @@ import com.verros.messageModel.MessageService;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
@@ -19,5 +20,13 @@ public class MessagesResources {
     public List<Message> getMessages(){
         return messageService.getAllMessages();
     }
+
+    @GET
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_XML)
+    public Message getMessage(@PathParam("id") long id){
+        return  messageService.getMessage(id);
+    }
+
 
 }

@@ -1,20 +1,39 @@
 package com.verros.messageModel;
 
+import com.verros.database.DatabaseClass;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class MessageService {
+    public static Map<Long, Message> messages = DatabaseClass.getMessages();
+
+    public MessageService(){
+        messages.put( 1L, new Message(1, "hello 1 ", "Mike verros 1 ") );
+        messages.put( 2L, new Message(2, "hello 2 ", "Mike verros 2") );
+    }
 
     public List<Message> getAllMessages(){
-        Message m1 = new Message(1, "Hello wordl 1", "Mike verros ");
-        Message m2 = new Message(2, "Hello wordl 2", "George verros");
-        Message m3 = new Message(3, "Hello wordl 3", "verros");
+        return  new ArrayList<Message>(messages.values());
+    }
 
-        List<Message> list  = new ArrayList<>();
-        list.add(m1);
-        list.add(m2);
-        list.add(m3);
+    public Message getMessage(long id){
+        return messages.get(id);
+    }
 
-        return list;
+    public Message addMessage(Message message){
+        message.setId(messages.size() + 1);
+        messages.put(message.getId() , message);
+        return message;
+    }
+
+    public Message updateMessage(Message message){
+        messages.put(message.getId(), message);
+        return message;
+    }
+
+    public Message removeMessage(long id){
+        return messages.remove(id);
     }
 }
