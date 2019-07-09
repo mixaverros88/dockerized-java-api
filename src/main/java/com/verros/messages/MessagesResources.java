@@ -21,9 +21,17 @@ public class MessagesResources {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public String addMessage(Message message){
-        messageService.addMessage(message);
-        return "Post Works";
+    public Message addMessage(Message message){
+        return messageService.addMessage(message);
+    }
+
+    @PUT
+    @Path("/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Message putMessage(@PathParam("id") long id, Message message){
+        message.setId(id);
+        return messageService.updateMessage(message);
     }
 
     @GET
