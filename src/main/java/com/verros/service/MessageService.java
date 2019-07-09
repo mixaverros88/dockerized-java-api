@@ -1,6 +1,7 @@
-package com.verros.messageModel;
+package com.verros.service;
 
 import com.verros.database.DatabaseClass;
+import com.verros.messageModel.Message;
 
 import java.util.ArrayList;
 import java.util.List;

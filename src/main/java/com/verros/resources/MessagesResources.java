@@ -1,42 +1,45 @@
-package com.verros.messages;
+package com.verros.resources;
 
 import com.verros.messageModel.Message;
-import com.verros.messageModel.MessageService;
+import com.verros.service.MessageService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/messages")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class MessagesResources {
 
     MessageService messageService = new MessageService();
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
     public List<Message> getMessages(){
         return messageService.getAllMessages();
     }
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
     public Message addMessage(Message message){
         return messageService.addMessage(message);
     }
 
     @PUT
     @Path("/{id}")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
     public Message putMessage(@PathParam("id") long id, Message message){
         message.setId(id);
         return messageService.updateMessage(message);
     }
 
+
+    @DELETE
+    @Path("/{id}")
+    public void deleteMessage(@PathParam("id") long id){
+        messageService.removeMessage(id);
+    }
+
     @GET
     @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
     public Message getMessage(@PathParam("id") long id){
         return  messageService.getMessage(id);
     }
