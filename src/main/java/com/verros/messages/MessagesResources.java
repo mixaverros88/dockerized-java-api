@@ -3,10 +3,7 @@ package com.verros.messages;
 import com.verros.messageModel.Message;
 import com.verros.messageModel.MessageService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -16,14 +13,22 @@ public class MessagesResources {
     MessageService messageService = new MessageService();
 
     @GET
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Message> getMessages(){
         return messageService.getAllMessages();
     }
 
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public String addMessage(Message message){
+        messageService.addMessage(message);
+        return "Post Works";
+    }
+
     @GET
     @Path("/{id}")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public Message getMessage(@PathParam("id") long id){
         return  messageService.getMessage(id);
     }
