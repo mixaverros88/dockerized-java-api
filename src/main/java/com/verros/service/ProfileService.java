@@ -21,8 +21,8 @@ public class ProfileService {
         return  new ArrayList<Profile>(profiles.values());
     }
 
-    public Profile getProfiles(long id){
-        return profiles.get(id);
+    public Profile getProfile(String name){
+        return profiles.get(name);
     }
 
     public Profile addProfile(Profile profile){
@@ -36,8 +36,8 @@ public class ProfileService {
         return profile;
     }
 
-    public Profile removeProfile(long id){
-        return profiles.remove(id);
+    public Profile removeProfile(String name){
+        return profiles.remove(name);
     }
 
 }
