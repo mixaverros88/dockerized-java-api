@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "e0239be6-c4f9-421f-a6e8-8efbcf3f02b2",
+		"name": "Messages",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Messages",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "812a3a95-1c82-4c2a-9f58-32ccf3b0f7a8",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}demorest_war_exploded/webapi/messages",
+					"host": [
+						"{{url}}demorest_war_exploded"
+					],
+					"path": [
+						"webapi",
+						"messages"
+					]
+				},
+				"description": "Get all the messages."
+			},
+			"response": []
+		},
+		{
+			"name": "Get a message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "819ad3cb-793a-46f5-8f6c-60273196d31b",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}demorest_war_exploded/webapi/messages/1",
+					"host": [
+						"{{url}}demorest_war_exploded"
+					],
+					"path": [
+						"webapi",
+						"messages",
+						"1"
+					]
+				},
+				"description": "Get one message by id"
+			},
+			"response": []
+		},
+		{
+			"name": "Post a message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aefda934-a923-415e-a2cc-2352d84fa2b8",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"author\": \"Mike verros 3\",\n    \"message\": \"hello 3 \"\n}"
+				},
+				"url": {
+					"raw": "{{url}}demorest_war_exploded/webapi/messages",
+					"host": [
+						"{{url}}demorest_war_exploded"
+					],
+					"path": [
+						"webapi",
+						"messages"
+					]
+				},
+				"description": "Create a new message"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3bb53843-c2e5-4491-a5bb-9e2adb9aa038",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}demorest_war_exploded/webapi/messages/3",
+					"host": [
+						"{{url}}demorest_war_exploded"
+					],
+					"path": [
+						"webapi",
+						"messages",
+						"3"
+					]
+				},
+				"description": "Delete one message by id"
+			},
+			"response": []
+		},
+		{
+			"name": "Put a message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3f20192a-fcec-4c80-9f9e-493e500936a8",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Mike verrosddsddd 3\",\r\n    \"message\": \"hello 3 \"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}demorest_war_exploded/webapi/messages/3",
+					"host": [
+						"{{url}}demorest_war_exploded"
+					],
+					"path": [
+						"webapi",
+						"messages",
+						"3"
+					]
+				},
+				"description": "Update a message"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7e7073db-4497-4795-8a50-49ff12f4ff0b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a9180046-7d5f-4421-a021-ca0be8e237fe",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "5e622342-2d03-4606-83ab-d177991a8b1e",
+			"key": "url",
+			"value": "http://localhost:8080/",
+			"type": "string"
+		}
+	]
+}
