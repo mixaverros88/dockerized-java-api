@@ -35,7 +35,7 @@ public class Message {
     }
 
     public Date getCreated() {
-        return created;
+        return new Date();
     }
 
     public void setCreated(Date created) {
