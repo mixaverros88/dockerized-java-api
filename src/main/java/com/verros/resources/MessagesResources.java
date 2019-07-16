@@ -15,13 +15,28 @@ public class MessagesResources {
     MessageService messageService = new MessageService();
 
     @GET
-    public List<Message> getMessages( @QueryParam("year") int year,
+    @Produces(MediaType.TEXT_XML) // Accept Header
+    public List<Message> getXmlMessages( @QueryParam("year") int year,
                                       @QueryParam("start") int start,
                                       @QueryParam("size") int size){
         if(year>0){
             return messageService.getAllMessagerForYear(year);
         }
-        if(start >= 0 && size >= 0 ){
+        if(start > 0 && size > 0 ){
+            return messageService.getAllMessagePaginated(start, size);
+        }
+        return messageService.getAllMessages();
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Message> getJsonMessages( @QueryParam("year") int year,
+                                      @QueryParam("start") int start,
+                                      @QueryParam("size") int size){
+        if(year>0){
+            return messageService.getAllMessagerForYear(year);
+        }
+        if(start > 0 && size > 0 ){
             return messageService.getAllMessagePaginated(start, size);
         }
         return messageService.getAllMessages();
