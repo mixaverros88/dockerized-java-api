@@ -4,7 +4,9 @@ import com.verros.messageModel.Message;
 import com.verros.service.MessageService;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
 @Path("/messages")
@@ -63,8 +65,16 @@ public class MessagesResources {
 
     @GET
     @Path("/{id}")
-    public Message getMessage(@PathParam("id") long id){
-        return  messageService.getMessage(id);
+    public Message getMessage(@PathParam("id") long id, @Context UriInfo uriInfo){
+        Message  message = messageService.getMessage(id);
+        String uri = uriInfo.getBaseUriBuilder()
+                .path(MessagesResources.class)
+                .path(Long.toString(message.getId()))
+                .build()
+                .toString();
+
+        message.addLink(uri, "self");
+        return message;
     }
 
 
