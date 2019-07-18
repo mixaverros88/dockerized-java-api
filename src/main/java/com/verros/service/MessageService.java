@@ -1,6 +1,7 @@
 package com.verros.service;
 
 import com.verros.database.DatabaseClass;
+import com.verros.messageModel.Comment;
 import com.verros.messageModel.Message;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.Map;
 
 public class MessageService {
     public static Map<Long, Message> messages = DatabaseClass.getMessages();
+    public static Map<Long, Comment> comments = DatabaseClass.getComments();
 
     public MessageService(){
         messages.put( 1L, new Message(1, "hello 1 ", "Mike verros 1 ") );

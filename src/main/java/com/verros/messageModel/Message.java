@@ -1,9 +1,8 @@
 package com.verros.messageModel;
 
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import javax.xml.bind.annotation.XmlTransient;
+import java.util.*;
 
 @XmlRootElement
 public class Message {
@@ -12,6 +11,7 @@ public class Message {
     private Date created;
     private String author;
     private List<Link> links = new ArrayList<>();
+    private Map<Long , Comment> comments = new HashMap<>();
 
     public Message(){}
 
@@ -59,6 +59,15 @@ public class Message {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    @XmlTransient
+    public Map<Long, Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Map<Long, Comment> comments) {
+        this.comments = comments;
     }
 
     public void addLink(String url, String rel){
