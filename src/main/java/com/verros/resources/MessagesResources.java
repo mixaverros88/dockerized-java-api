@@ -11,6 +11,7 @@ import javax.ws.rs.core.UriInfo;
 import javax.xml.stream.events.Comment;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Date;
 import java.util.List;
 
 @Path("/messages")
@@ -85,11 +86,17 @@ public class MessagesResources {
         return new CommentsResources();
     }
 
-//    public String getUriForComments(@Context UriInfo uriInfo){
-//        return uriInfo.getBaseUriBuilder()
-//                .path(Comment.class)
-//
-//    }
+
+    @Path("/test")
+    @HEAD
+    public Response getHeader(){
+        return Response
+                .status(Response.Status.OK)
+                .expires(new Date())
+                .header("someHeader", "someHeaderValue")
+                .build();
+    }
+
 
     public String getUriForSelf(@Context UriInfo uriInfo, Message message) {
         return uriInfo.getBaseUriBuilder()
@@ -106,5 +113,6 @@ public class MessagesResources {
                 .build()
                 .toString();
     }
+
 
 }
