@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="resources/css/bootstrap.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
@@ -22,7 +22,7 @@
                     <p><a href="webapi/profiles/mgv" target="_blank">Get a specific profile by name</a></p>
                 </div>
                 <div class="col-7">
-                    <img src="img/uml.jpg"  class="img-fluid" >
+                    <img src="resources/img/uml.jpg"  class="img-fluid" >
                 </div>
             </div>
         </div>
