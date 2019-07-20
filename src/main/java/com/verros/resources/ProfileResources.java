@@ -19,8 +19,8 @@ public class ProfileResources {
     }
 
     @GET
-    @Path("/{name}")
-    public Profile getProfile(@PathParam("name") String name){
+    @Path("/{profileName}")
+    public Profile getProfile(@PathParam("profileName") String name){
         return profileService.getProfile(name);
     }
 
@@ -30,15 +30,15 @@ public class ProfileResources {
     }
 
     @PUT
-    @Path("/{name}")
-    public Profile putProfile(@PathParam("name") String name, Profile profile){
+    @Path("/{profileName}")
+    public Profile putProfile(@PathParam("profileName") String name, Profile profile){
         profile.setProfileName(name);
         return profileService.updateProfile(profile);
     }
 
     @DELETE
-    @Path("/{name}")
-    public void deleteProfile(@PathParam("name") String name){
+    @Path("/{profileName}")
+    public void deleteProfile(@PathParam("profileName") String name){
         profileService.removeProfile(name);
     }
 

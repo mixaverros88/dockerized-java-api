@@ -59,30 +59,30 @@ public class MessagesResources {
     }
 
     @PUT
-    @Path("/{id}")
-    public Message putMessage(@PathParam("id") long id, Message message){
+    @Path("/{messageId}")
+    public Message putMessage(@PathParam("messageId") long id, Message message){
         message.setId(id);
         return messageService.updateMessage(message);
     }
 
 
     @DELETE
-    @Path("/{id}")
-    public void deleteMessage(@PathParam("id") long id){
+    @Path("/{messageId}")
+    public void deleteMessage(@PathParam("messageId") long id){
         messageService.removeMessage(id);
     }
 
     @GET
-    @Path("/{id}")
-    public Message getMessage(@PathParam("id") long id, @Context UriInfo uriInfo){
+    @Path("/{messageId}")
+    public Message getMessage(@PathParam("messageId") long id, @Context UriInfo uriInfo){
         Message  message = messageService.getMessage(id);
         message.addLink(getUriForSelf(uriInfo, message), "self");
         message.addLink(getUriForProfile(uriInfo, message), "profile");
         return message;
     }
 
-    @Path("/{id}/comments")
-    public CommentsResources getCommentRecources(@PathParam("id") long id){
+    @Path("/{messageId}/comments")
+    public CommentsResources getCommentRecources(@PathParam("messageId") long id){
         return new CommentsResources();
     }
 

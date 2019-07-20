@@ -15,7 +15,7 @@ public class CommentsResources {
 
     @GET
     @Path("/{commentId}")
-    public String getCommentId(@PathParam("id") long messageId ,@PathParam("commentId") long commentId){
+    public String getCommentId(@PathParam("messageId") long messageId ,@PathParam("commentId") long commentId){
         return "messageId " + messageId + "  commentId " + commentId;
     }
 
