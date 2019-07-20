@@ -13,6 +13,8 @@
                 <div class="col-5">
                     <h4>Exmple Urls</h4>
                     <p><a href="webapi/messages" target="_blank">Get all messages</a></p>
+                    <p><a href="webapi/messages?year=2019" target="_blank">Get all messages by Year 2019</a></p>
+                    <p><a href="webapi/messages?start=1&size=1" target="_blank">Get all messages paginated</a></p>
                     <p><a href="webapi/messages/1" target="_blank">Get a specific message  by id</a></p>
                     <p><a href="webapi/messages/1/comments" target="_blank">Get all comments from a specific message by id</a></p>
                     <p><a href="webapi/messages/1/comments/1" target="_blank">Get a specific comment by id from a specific message by id</a></p>
