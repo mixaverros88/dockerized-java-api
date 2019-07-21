@@ -20,6 +20,7 @@ import java.util.List;
 public class MessagesResources {
 
     MessageService messageService = new MessageService();
+    private String values;
 
     @GET
     @Produces(MediaType.TEXT_XML) // Accept Header
@@ -74,6 +75,7 @@ public class MessagesResources {
 
     @GET
     @Path("/{messageId}")
+    @Produces({"application/json", "application/xml"})
     public Message getMessage(@PathParam("messageId") long id, @Context UriInfo uriInfo){
         Message  message = messageService.getMessage(id);
         message.addLink(getUriForSelf(uriInfo, message), "self");

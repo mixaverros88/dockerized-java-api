@@ -5,11 +5,9 @@ import com.verros.service.MessageService;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;
-import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.Application;
-import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.*;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
@@ -35,6 +33,19 @@ public class MessageResourcesTest extends JerseyTest {
         assertEquals("Http Content-Type should be: ", MediaType.APPLICATION_JSON, response.getHeaderString(HttpHeaders.CONTENT_TYPE));
 
         //assertEquals("Content of ressponse is: ",messageService.getAllMessages()  , responseMessages);
+
+    }
+
+    @Test
+    public void postMessage(){
+
+        Response response = target("/messages").request()
+                .post(Entity.json("{\"author\": \"Mike verros 3\",\"message\": \"hello 3 \"}"));
+
+        Message message = response.readEntity(Message.class);
+
+        assertEquals("Http Response should be 201 ", Response.Status.CREATED.getStatusCode(), response.getStatus());
+        assertEquals("Message text", message.getMessage(), "hello 3 ");
 
     }
 }
