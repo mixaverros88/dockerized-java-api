@@ -23,3 +23,7 @@ You can find in postman folder a json to run tests via newman
 | | | |Wrong Format data|400 or 415|
 | | | |Not found|404|
 | | | |Failure|500|
+
+
+##### This rest api follows the Richardson Maturity Model
+

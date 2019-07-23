@@ -8,7 +8,6 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
-import javax.xml.stream.events.Comment;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Date;
@@ -61,16 +60,18 @@ public class MessagesResources {
 
     @PUT
     @Path("/{messageId}")
-    public Message putMessage(@PathParam("messageId") long id, Message message){
+    public Response putMessage(@PathParam("messageId") long id, Message message){
         message.setId(id);
-        return messageService.updateMessage(message);
+        messageService.updateMessage(message);
+        return Response.status(Response.Status.CREATED).build();
     }
 
 
     @DELETE
     @Path("/{messageId}")
-    public void deleteMessage(@PathParam("messageId") long id){
+    public Response deleteMessage(@PathParam("messageId") long id){
         messageService.removeMessage(id);
+        return Response.status(Response.Status.OK).build();
     }
 
     @GET
