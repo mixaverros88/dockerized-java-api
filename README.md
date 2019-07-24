@@ -25,5 +25,8 @@ You can find in postman folder a json to run tests via newman
 | | | |Failure|500|
 
 
-##### This rest api follows the Richardson Maturity Model
+### This rest api follows the Richardson Maturity Model
+1. Resource URI
+2. HTTP Methods
+3. HATEOAS
 

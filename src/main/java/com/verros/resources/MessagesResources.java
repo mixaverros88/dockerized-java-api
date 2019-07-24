@@ -19,7 +19,6 @@ import java.util.List;
 public class MessagesResources {
 
     MessageService messageService = new MessageService();
-    private String values;
 
     @GET
     @Produces(MediaType.TEXT_XML) // Accept Header
@@ -51,19 +50,42 @@ public class MessagesResources {
 
     @POST
     public Response addMessage(@Context UriInfo uriInfo, Message message) throws URISyntaxException {
+
+        if(message.getAuthor() == null || message.getMessage() == null){
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity("The author and the message fields are required")
+                    .build();
+        }
+
         Message newMessage =  messageService.addMessage(message);
+
        return Response.created(new URI(uriInfo.getAbsolutePath().toString() + "/"  + newMessage.getId()))
                .entity(newMessage)
                .build();
-
     }
 
     @PUT
     @Path("/{messageId}")
     public Response putMessage(@PathParam("messageId") long id, Message message){
+
+        if(id<=0){
+            return Response.status(Response.
+                    Status.BAD_REQUEST)
+                    .entity("Please provide a valid id")
+                    .build();
+        }
+
+        if ( !messageService.getAllMessages().contains(message) ){
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity("Message id: " + id + " doesn't exists")
+                    .build();
+        }
+
         message.setId(id);
         messageService.updateMessage(message);
-        return Response.status(Response.Status.CREATED).build();
+        return Response.status(Response.Status.CREATED)
+                .entity(message)
+                .build();
     }
 
 
@@ -77,11 +99,26 @@ public class MessagesResources {
     @GET
     @Path("/{messageId}")
     @Produces({"application/json", "application/xml"})
-    public Message getMessage(@PathParam("messageId") long id, @Context UriInfo uriInfo){
+    public Response getMessage(@PathParam("messageId") long id, @Context UriInfo uriInfo){
+
+        if(id<=0){
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity("Please provide a valid id")
+                    .build();
+        }
+        if(messageService.getMessage(id) == null){
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity("Message id: " + id + " doesn't exists")
+                    .build();
+        }
+
         Message  message = messageService.getMessage(id);
         message.addLink(getUriForSelf(uriInfo, message), "self");
         message.addLink(getUriForProfile(uriInfo, message), "profile");
-        return message;
+
+        return Response.status(Response.Status.OK)
+                .entity(message)
+                .build();
     }
 
     @Path("/{messageId}/comments")
