@@ -32,5 +32,5 @@ You can find in postman folder a json to run tests via newman
 
 
 ### Jenkins
-![preview image](https://github.com/mixaverros88/java-api/tree/master/src/main/webapp/resources/img/jenkins.jpg)
+![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/src/main/webapp/resources/img/jenkins.jpg)
 mvn test
