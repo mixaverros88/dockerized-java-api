@@ -1,20 +1,16 @@
 
 import com.verros.messageModel.Message;
 import com.verros.resources.MessagesResources;
-import com.verros.service.MessageService;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;
 
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.*;
-import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
 public class MessageResourcesTest extends JerseyTest {
-
-    MessageService messageService = new MessageService();
 
 
     @Override
@@ -23,7 +19,7 @@ public class MessageResourcesTest extends JerseyTest {
     }
 
     @Test
-    public void givenGetHiGreeting_whenCorrectRequest_thenResponseIsOkAndContainsHi(){
+    public void getMessage(){
 
         Response response = target("/messages").request(MediaType.APPLICATION_JSON).get();
 
