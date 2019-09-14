@@ -13,6 +13,9 @@ import java.net.URISyntaxException;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Messages main resource URI
+ */
 @Path("/messages")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
