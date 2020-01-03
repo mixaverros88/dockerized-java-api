@@ -4,6 +4,9 @@
 ## Postman Collection ##
 You can find in postman folder a json to run tests via newman
 
+## Docker ##
+You can run the dockerRun.sh in order to deploy in a docker container
+https://hub.docker.com/r/mixaverross88/java-restfull-api
 
 ### Status codes for CRUD operations
 
