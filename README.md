@@ -31,7 +31,7 @@ https://hub.docker.com/r/mixaverross88/java-restfull-api
 ### This rest api follows the Richardson Maturity Model
 1. Resource URI
 2. HTTP Methods
-3. 
+3. HATEOAS (Hypermedia) 
 
 
 ### Jenkins
