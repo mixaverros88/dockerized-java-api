@@ -1,9 +1,11 @@
+# a lightweight linux distribution
 FROM tomcat:8.0-alpine
 
+# maintainer
 LABEL maintainer="mixalisverros@hotmail.gr"
 
-# ADD demorest.war /usr/local/tomcat/webapps/
-
+# the port which the tomcat is listening inside the container
 EXPOSE 8080
 
+# run the tomcat
 CMD ["catalina.sh", "run"]
