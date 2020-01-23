@@ -11,4 +11,4 @@ EXPOSE 8080
 CMD ["catalina.sh", "run"]
 
 # add a healthvheck
-HEALTHCHECK CMD curl --fail http://localhost:8081/webapi/ || exit 1
+HEALTHCHECK CMD curl --fail http://localhost:80/webapi/ || exit 1
