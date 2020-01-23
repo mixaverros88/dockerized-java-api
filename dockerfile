@@ -9,3 +9,6 @@ EXPOSE 8080
 
 # run the tomcat
 CMD ["catalina.sh", "run"]
+
+# add a healthvheck
+HEALTHCHECK CMD curl --fail http://localhost:8081/webapi/ || exit 1
