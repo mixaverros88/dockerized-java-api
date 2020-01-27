@@ -37,3 +37,5 @@ https://hub.docker.com/r/mixaverross88/java-restfull-api
 ### Jenkins
 ![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/src/main/webapp/resources/img/jenkins.jpg)
 mvn test
+
+[![Known Vulnerabilities](https://snyk.io/test/github/mixaverros88/java-api/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/mixaverros88/java-api?targetFile=pom.xml)
