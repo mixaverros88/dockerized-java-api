@@ -5,7 +5,16 @@
 You can find in postman folder a json to run tests via newman
 
 ## Docker ##
-You can run the dockerRun.sh in order to deploy in a docker container
+You can run the dockerRun.sh in order to spin up in a docker container
+
+Download the war file from github
+````
+curl -LOk https://github.com/mixaverros88/java-api/raw/master/target/demorest.war
+````
+Spin up the container
+````
+docker run -it -p 80:8080 -v /$(pwd):/usr/local/tomcat/webapps mixaverross88/java-restfull-api:1.0
+````
 https://hub.docker.com/r/mixaverross88/java-restfull-api
 
 ### Status codes for CRUD operations
