@@ -19,6 +19,15 @@ Spin up the container
 ````
 docker run -it -p 80:8080 -v /$(pwd):/usr/local/tomcat/webapps mixaverross88/java-restfull-api:1.0
 ````
+Or run the compose file
+````
+docker-compose up
+````
+Navigate to the following link
+````
+[docker-machine ip]:80/demorest/
+````
+
 https://hub.docker.com/r/mixaverross88/java-restfull-api
 
 ## Status codes for CRUD operations ##
