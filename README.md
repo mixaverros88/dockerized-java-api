@@ -5,29 +5,26 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/mixaverros88/java-api/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/mixaverros88/java-api?targetFile=pom.xml)
 
 # RESTful APIs with JAX-RS
-
-
-## Postman Collection ##
-You can find in postman folder a json to run tests via newman.
+![preview image](https://github.com/mixaverros88/java-api/blob/master/icons/java_rest_api.jpg)
 
 ## Docker Instructions ##
-You can run the dockerRun.sh in order to spin up in a docker container or you can download the war file from github
+![preview image](https://github.com/mixaverros88/java-api/blob/master/icons/dockerIcon.png) You can run the dockerRun.sh in order to spin up a docker container or you can download the war file from github.
 ````
 curl -LOk https://github.com/mixaverros88/java-api/raw/master/target/demorest.war
 ````
-Spin up the container
+Spin up the container.
 ````
 docker run -it -p 80:8080 -v /$(pwd):/usr/local/tomcat/webapps mixaverross88/java-restfull-api:1.0
 ````
-Or run the compose file
+Or run the compose file.
 ````
 docker-compose up
 ````
-Navigate to the following link
+Navigate to the following link.
 ````
 [docker-machine ip]:80/demorest/
 ````
-
+### See the docker file in the Docker Hub ###
 https://hub.docker.com/r/mixaverross88/java-restfull-api
 
 ## Status codes for CRUD operations ##
@@ -51,9 +48,14 @@ https://hub.docker.com/r/mixaverross88/java-restfull-api
 
 
 ## This rest api follows the Richardson Maturity Model ##
+![preview image](https://github.com/mixaverros88/java-api/blob/master/icons/The-Richardson-Maturity-Model-Nordic-APIs.png) 
+
 1. Resource URI (Individual URIs for each resource)
 2. HTTP Methods (GET, POST, PUT, DELETE)
 3. HATEOAS (Responses have links that the clients can use) 
+
+## Postman Collection ##
+![preview image](https://github.com/mixaverros88/java-api/blob/master/icons/postman.png) You can find in postman folder a json to run tests via newman.
 
 ## Jenkins ##
 ![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/src/main/webapp/resources/img/jenkins.jpg)
