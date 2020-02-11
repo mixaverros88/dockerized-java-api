@@ -1,0 +1,9 @@
+.git
+.gitignore
+README.md
+dockerRun.sh
+pom.xml
+/icons/*
+/postman/*
+/src/*
+/target/*
