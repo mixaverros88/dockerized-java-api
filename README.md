@@ -55,7 +55,7 @@ https://hub.docker.com/r/mixaverross88/java-restfull-api
 3. HATEOAS (Responses have links that the clients can use) 
 
 ## Postman Collection ##
-![preview image](https://github.com/mixaverros88/java-api/blob/master/icons/postman.png) You can find in postman folder a json to run tests via newman.
+![preview image](https://github.com/mixaverros88/java-api/blob/master/icons/postman2.png) You can find in postman folder a json to run tests via newman.
 
 ## Jenkins ##
 ![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/src/main/webapp/resources/img/jenkins.jpg)
