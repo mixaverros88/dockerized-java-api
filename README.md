@@ -46,7 +46,21 @@ https://hub.docker.com/r/mixaverross88/java-restfull-api
 | | | |Not found|404|
 | | | |Failure|500|
 
-
+### :computer: Deploy instructions ###
+Use the maven plug-in (tomcat7-maven-plugin) for tomcat server in order to automatically deploy this project in your local server. You can find this plug-in in pom.xml file in order to modify with yours configurations, also don't forget to add in settings.xml your credentials for tomcat server.
+```
+<servers>
+    <server>
+        <id>TomcatServer</id>
+        <username>admin</username>
+        <password>password</password>
+    </server>
+</servers>
+```
+You can run the below command in order to deploy the artifact in your local tomcat server
+```
+mvn clean tomcat7:deploy
+```
 ## This rest api follows the Richardson Maturity Model ##
 ![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/icons/The-Richardson-Maturity-Model-Nordic-APIs.png) 
 
