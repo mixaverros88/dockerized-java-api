@@ -1,7 +1,7 @@
 version: '3'
 services:
   restapi:
-    image: mixaverross88/java-restfull-api:prod
+    image: mixaverross88/java-restfull-api
     ports:
      - "80:8080"
     
