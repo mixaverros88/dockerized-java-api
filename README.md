@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/mixaverros88/dockerized-java-api.svg?branch=master)](https://travis-ci.com/mixaverros88/dockerized-java-api)
 ![preview image](https://img.shields.io/github/followers/mixaverros88?label=Follow&style=plastic)
 ![preview image](https://img.shields.io/github/forks/mixaverros88/java-api?style=plastic)
 ![preview image](https://img.shields.io/github/stars/mixaverros88/java-api?style=plastic)
