@@ -15,7 +15,7 @@ curl -LOk https://github.com/mixaverros88/java-api/raw/master/target/demorest.wa
 ````
 Spin up the container.
 ````
-docker run -it -p 80:8080 -v /$(pwd):/usr/local/tomcat/webapps mixaverross88/java-restfull-api:1.0
+docker run -it -p 80:8080 -v /$(pwd):/usr/local/tomcat/webapps mixaverross88/java-restfull-api:1.1
 ````
 Or run the compose file.
 ````
