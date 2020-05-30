@@ -1,8 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.verros</groupId>
     <artifactId>demorest</artifactId>
     <packaging>war</packaging>
@@ -15,7 +13,42 @@
         <org.glassfish.jersey.test-framework>2.27</org.glassfish.jersey.test-framework>
         <org.glassfish.jersey.test-framework.providers>2.27</org.glassfish.jersey.test-framework.providers>
         <org.apache.maven.plugins>2.5.1</org.apache.maven.plugins>
+        <maven.help.plugin>3.1.0</maven.help.plugin>
+        <org.apache.tomcat.maven>2.2</org.apache.tomcat.maven>
+        <maven.compiler.plugin>3.2</maven.compiler.plugin>
+        <maven.war.plugin>2.1</maven.war.plugin>
+        <java.version>1.8</java.version>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>noTests</id>
+            <properties>
+                <maven.test.skip>true</maven.test.skip>
+            </properties>
+        </profile>
+        <profile>
+            <id>java7</id>
+            <properties>
+                <java.version>1.7</java.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>production</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <debug>false</debug>
+                            <optimize>true</optimize>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <build>
         <finalName>demorest</finalName>
@@ -23,15 +56,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
+                <version>${maven.compiler.plugin}</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>2.1</version>
+                <version>${maven.war.plugin}</version>
                 <configuration>
                     <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
                 </configuration>
@@ -39,12 +72,26 @@
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
+                <version>${org.apache.tomcat.maven}</version>
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
                     <server>stage-server</server>
                     <update>true</update>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-help-plugin</artifactId>
+                <version>${maven.help.plugin}</version>
+                <executions>
+                    <execution>
+                        <id>show-profiles</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>active-profiles</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
