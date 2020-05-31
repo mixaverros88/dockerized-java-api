@@ -9,7 +9,7 @@
 ![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/icons/java_rest_api.jpg)
 
 ## Docker Instructions ##
-![preview image](https://github.com/mixaverros88/java-api/blob/master/icons/dockerIcon.png) You can run the dockerRun.sh in order to spin up a docker container or you can download the war file from github.
+![preview image](https://github.com/mixaverros88/java-api/blob/master/icons/dockerIcon.png) You can run the dockerRun.sh in order to spin up a docker container.
 ````
 curl -LOk https://github.com/mixaverros88/java-api/raw/master/target/demorest.war
 ````
