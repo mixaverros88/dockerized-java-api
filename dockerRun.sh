@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 filepath=$PWD
 cd $filepath
 mkdir deploy
