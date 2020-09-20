@@ -23,4 +23,12 @@ pipeline {
         }
 
     }
+    post{
+      junit '**/*.xml'
+    }
+    post {
+      success {
+        mail to: mixalisverros@hotmail.gr, subject: ‘The Pipeline success :)‘
+      }
+    }
 }
