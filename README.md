@@ -74,5 +74,4 @@ mvn clean tomcat7:deploy
 ![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/icons/postman2.png) You can find in postman folder a json to run tests via newman.
 
 ## Jenkins ##
-![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/src/main/webapp/resources/img/jenkins.jpg)
-mvn test
+You are able to use pipeline.groovy in order to create pipe line for jenkins.
