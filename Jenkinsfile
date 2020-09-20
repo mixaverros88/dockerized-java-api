@@ -24,11 +24,11 @@ pipeline {
 
     }
     post{
-      junit '**/*.xml'
-    }
-    post {
-      success {
-        mail bcc: '', body: '', cc: '', from: '', replyTo: '', subject: 'The Pipeline success', to: 'mixalisverros@hotmail.gr'
+      always {
+        junit '**/*.xml'
+      }
+      failure {
+        mail bcc: '', body: '', cc: '', from: '', replyTo: '', subject: 'The Pipeline fail', to: 'mixalisverros@hotmail.gr'
       }
     }
 }
