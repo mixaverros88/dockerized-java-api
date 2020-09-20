@@ -28,7 +28,7 @@ pipeline {
     }
     post {
       success {
-        mail to: mixalisverros@hotmail.gr, subject: ‘The Pipeline success :)‘
+        mail bcc: '', body: '', cc: '', from: '', replyTo: '', subject: 'The Pipeline success', to: 'mixalisverros@hotmail.gr'
       }
     }
 }
