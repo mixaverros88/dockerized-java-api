@@ -31,10 +31,10 @@ pipeline {
         junit '**/*.xml'
       }
       success{
-         mail bcc: '', body: 'The Pipeline for ${PROJECT_NAME} success', cc: '', from: '', replyTo: '', subject: 'The Pipeline for ${PROJECT_NAME} success', to: 'mixalisverros@hotmail.gr'
+         echo "The Pipeline for ${PROJECT_NAME} success"
       }
       failure {
-        mail bcc: '', body: 'The Pipeline for ${PROJECT_NAME} fail', cc: '', from: '', replyTo: '', subject: 'The Pipeline for ${PROJECT_NAME} fail', to: 'mixalisverros@hotmail.gr'
+        echo "The Pipeline for ${PROJECT_NAME} fail"
       }
     }
 }
