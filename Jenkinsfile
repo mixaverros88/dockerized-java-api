@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    enviroment {
+    environment {
       PROJECT_NAME = "Java Rest API"
     }
     stages {
