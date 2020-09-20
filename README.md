@@ -64,14 +64,14 @@ You can run the below command in order to deploy the artifact in your local tomc
 mvn clean tomcat7:deploy
 ```
 ## This rest api follows the Richardson Maturity Model ##
-![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/icons/The-Richardson-Maturity-Model-Nordic-APIs.png) 
+![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/icons/The-Richardson-Maturity-Model-Nordic-APIs.png)
 
 1. Resource URI (Individual URIs for each resource)
 2. HTTP Methods (GET, POST, PUT, DELETE)
-3. HATEOAS (Responses have links that the clients can use) 
+3. HATEOAS (Responses have links that the clients can use)
 
 ## Postman Collection ##
 ![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/icons/postman2.png) You can find in postman folder a json to run tests via newman.
 
 ## Jenkins ##
-You are able to use pipeline.groovy in order to create pipe line for jenkins.
+You are able to use Jenkinsfile in order to create pipe line for jenkins.
