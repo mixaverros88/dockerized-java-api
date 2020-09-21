@@ -18,6 +18,13 @@ pipeline {
             }
         }
 
+        stage('Docker'){
+            steps{
+                echo "Build image ${PROJECT_NAME} Stage";
+                bat 'docker run -it -p 80:8080 mixaverross88/java-restfull-api:1.1'
+            }
+        }
+
         stage('Deploy'){
             steps{
                 echo "Deploy ${PROJECT_NAME} in Tomcat";
