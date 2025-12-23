@@ -1,11 +1,3 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mixaverros88_dockerized-java-api&metric=alert_status)](https://sonarcloud.io/dashboard?id=mixaverros88_dockerized-java-api)
-[![Build Status](https://travis-ci.com/mixaverros88/dockerized-java-api.svg?branch=master)](https://travis-ci.com/mixaverros88/dockerized-java-api)
-![preview image](https://img.shields.io/github/followers/mixaverros88?label=Follow&style=plastic)
-![preview image](https://img.shields.io/github/forks/mixaverros88/java-api?style=plastic)
-![preview image](https://img.shields.io/github/stars/mixaverros88/java-api?style=plastic)
-![preview image](https://img.shields.io/github/watchers/mixaverros88/java-api?style=plastic)
-[![Known Vulnerabilities](https://snyk.io/test/github/mixaverros88/java-api/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/mixaverros88/java-api?targetFile=pom.xml)
-
 # RESTful APIs with JAX-RS
 ![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/icons/java_rest_api.jpg)
 
