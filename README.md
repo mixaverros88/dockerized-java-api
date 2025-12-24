@@ -5,8 +5,11 @@ dockerized-java-api is a lightweight RESTful API built with JAX-RS and fully con
 The project includes:
 
 🧩 A Java REST API implemented with JAX-RS (Java API for RESTful Web Services)
+
 🐳 A Dockerfile and docker-compose.yml for easy containerization and local development
+
 🚀 Scripts to spin up and run the API in Docker
+
 📦 Postman examples to test endpoints
 
 Whether you’re learning how to containerize Java applications or need a quick starter API to build on, this repo gives you a base you can extend and customize. It demonstrates how to go from code to a running Docker container, bridging Java development with modern deployment workflows. 
