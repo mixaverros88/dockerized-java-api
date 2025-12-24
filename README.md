@@ -1,4 +1,12 @@
 # RESTful APIs with JAX-RS
+
+A small **RESTful API built with JAX-RS** and Docker support.
+
+This project includes:
+- A Java REST API implemented using **JAX-RS**. :contentReference[oaicite:0]{index=0}
+- A **Dockerfile** to build and run the API inside a container. :contentReference[oaicite:1]{index=1}
+- Support files for Docker Compose and container orchestration. :contentReference[oaicite:2]{index=2}
+
 ![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/icons/java_rest_api.jpg)
 
 ## Docker Instructions ##
