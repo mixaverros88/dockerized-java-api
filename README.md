@@ -12,8 +12,7 @@ The project includes:
 
 📦 Postman examples to test endpoints
 
-Whether you’re learning how to containerize Java applications or need a quick starter API to build on, this repo gives you a base you can extend and customize. It demonstrates how to go from code to a running Docker container, bridging Java development with modern deployment workflows. 
-github.com
+Whether you’re learning how to containerize Java applications or need a quick starter API to build on, this repo gives you a base you can extend and customize. It demonstrates how to go from code to a running Docker container, bridging Java development with modern deployment workflows.
 
 ![preview image](https://raw.githubusercontent.com/mixaverros88/java-api/master/icons/java_rest_api.jpg)
 
